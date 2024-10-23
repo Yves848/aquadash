@@ -1,21 +1,9 @@
-<header class="layout-header">Header</header>
-<slot/>
-<footer class="layout-footer">Footer</footer>
-
-<style>
-  .layout-header {
-    background-color: #246653;
-    color: #f4a261;
-    font-size: 30px;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .layout-footer {
-    background-color: #246653;
-    color: #e9c46a;
-    font-size: 30px;
-    text-align: center;
-    padding: 10px;
-  }
-</style>
+<div class="container flex flex-col min-h-screen">
+  <div class="container">
+    <header class="flex bg-slate-500 text-blue-300 h-16 items-center justify-center">Header</header>
+  </div>
+  <slot />
+  <div class="align-bottom">
+    <footer class="flex bg-slate-500 text-blue-300 h-16 items-center justify-center">Footer</footer>
+  </div>
+</div>
