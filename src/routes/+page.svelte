@@ -9,9 +9,8 @@
   
 </script>
 
-<h1 class="text-3xl text-red-500">Welcome Home!</h1>
+<h1 class="text-3xl text-red-500">Aquadash!</h1>
 
-<a href="/blog" class="">Blog</a>
-<a href="/products" class="">Products</a>
-
-<button on:click={handleClick}>Place Order</button>
+<u class="list-inside list-none">
+  <li class="text-2xl text-blue-900 no-underline">Lights</li>
+</u>
