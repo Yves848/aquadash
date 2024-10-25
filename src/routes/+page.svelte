@@ -1,16 +1,20 @@
 <script>
   import '../app.css';
   import {goto} from "$app/navigation";
+  import Lights from '../components/lights/lights.svelte';
+  export let data;
+  const { lights } = data;
   const handleClick = () => {
     console.log('Button was clicked');
     goto('/products');
   }
-
-  
 </script>
 
-<h1 class="text-3xl text-red-500">Aquadash!</h1>
+<div class="grid">
+  <div class="">
 
-<u class="list-inside list-none">
-  <li class="text-2xl text-blue-900 no-underline">Lights</li>
-</u>
+  </div>
+</div>
+
+<Lights day= {lights.day} night={lights.night}></Lights>
+
