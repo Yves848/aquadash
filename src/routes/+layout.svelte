@@ -16,12 +16,12 @@
   <div class="rounded-md border-4 border-slate-400 h-full my-2">
     <div class="container h-full">
       <div class="grid grid-cols-12 h-full">
-        <div class="col-span-2 bg-slate-900 text-cyan-50 text-justify text-3xl flex flex-col justify-start items-center">
+        <div class="md:col-span-2 col-span-4 bg-slate-900 text-cyan-50 text-justify text-3xl flex flex-col justify-start items-center">
           <p class="my-3"><a class=""  href="/lights">Lights</a></p>
           <p class="my-3"><a class=""  href="/planning">Planning</a></p>
           <p class="my-3"><a class=""  href="/settings">Settings</a></p>
         </div>
-        <div class="col-span-10 bg-yellow-50 h-full p-4">
+        <div class="md:col-span-10 col-span-8 bg-yellow-50 h-full p-4">
           <slot />
         </div>
 
