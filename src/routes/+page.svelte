@@ -10,11 +10,6 @@
   }
 </script>
 
-<div class="grid">
-  <div class="">
-
-  </div>
-</div>
-
 <Lights day= {lights.day} night={lights.night}></Lights>
+
 
