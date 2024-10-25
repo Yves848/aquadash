@@ -4,4 +4,6 @@ console.log("Starting server...");
 
 start_mongo().then((): void => {
   console.log("MongoDB started");
-}).catch(() => {console.log("Error starting MongoDB")});
+}).catch(() => {
+  console.log("Error starting MongoDB")
+});

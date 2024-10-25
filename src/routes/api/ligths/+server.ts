@@ -1,13 +1,12 @@
+import {CONTROLLER_IP} from "$env/static/private";
 export async function POST(requestEvent) {
+  
   const {request} = requestEvent;
   const {mode} = await request.json()
-  console.log(mode);
+  console.log(`Mode : ${mode}`);
   const url = mode === "day" ? "day": "night"
-  const response = await fetch(`http://192.168.50.201/${url}`,{
+  const response = await fetch(`http://${CONTROLLER_IP}/${url}`,{
     method : "POST"
-    // body: JSON.stringify({
-    //   "mode":"day"
-    // })
   });
   const postcodes = await response.json();
   return new Response("{}", { 
@@ -17,10 +16,8 @@ export async function POST(requestEvent) {
 }
 
 export async function GET() {
-  console.log("GET");
-  const response = await fetch('http://192.168.50.201/data');
+  const response = await fetch(`http://${CONTROLLER_IP}/data`);
   const data = await response.json();
-  console.log(data);
   return new Response(JSON.stringify(data), { 
     status: 200,
     headers: { 'Content-Type': 'application/json' }

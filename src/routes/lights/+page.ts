@@ -6,7 +6,7 @@ export const load = async(loadEvent) => {
       "content-type": "application/json"
     }
   });
-  console.log(response);
+  // console.log(response);
   const lights = await response.json();
   return { lights }
 }
