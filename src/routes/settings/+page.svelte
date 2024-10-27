@@ -1,15 +1,13 @@
 <script lang="ts">
-  export let data;
-  const { lights } = data;
+  import { Toggle } from 'stwui';
+ 
 
-  let day = lights.day;
-  let night = lights.night;
+  let toggled = true;
 
-  interface iLight {
-    day: string;
-    night: string;
+  $: {
+    toggled, handleMode(toggled ? "auto" : "manual");
   }
-
+ 
   const handleMode= async (mode: string): Promise<void> => {
     const response = await fetch("api/mode", {
       method: "POST",
@@ -19,21 +17,15 @@
     });
 
     console.log(`Satus : ${response.status}`);
-
-    const res = await fetch("api/ligths", {
-      // mode: 'cors',
-      headers: {
-        "content-type": "application/json",
-      },
-    });
-    console.log(response);
-    const lights = await res.json();
-    day = lights.day;
-    night = lights.night;
   };
 </script>
 
 <h1>Settings</h1>
+<div class="container">
+  <div class="flex">
+    <Toggle bind:on={toggled}/> <p class="ml-4">{toggled? "Automatic":"Manual"}</p>
+  </div>
+</div>
 
-<button on:click={() => handleMode("auto")}>Auto</button>
-<button on:click={() => handleMode("manual")}>Manual</button>
+
+

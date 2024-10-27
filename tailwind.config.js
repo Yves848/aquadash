@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+  content: [
+    './src/**/*.{html,js,svelte,ts}',
+    './node_modules/stwui/**/*.{svelte,js,ts,html}'
+  ],
   theme: {
     screens: {
       'sm': '640px',
@@ -11,9 +14,11 @@ export default {
       '3xl': '1920px',
       '4xl': '2560px',
     },
-    container : {center : true},
+    container: { center: true },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('stwui/plugin')
+  ],
 }
 
