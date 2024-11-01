@@ -8,7 +8,7 @@ export async function POST(requestEvent) {
   const response = await fetch(`http://${CONTROLLER_IP}/${url}`,{
     method : "POST"
   });
-  const postcodes = await response.json();
+//  const postcodes = await response.json();
   return new Response("{}", { 
     status: 200,
     headers: { 'Content-Type': 'application/json' }
